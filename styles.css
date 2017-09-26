@@ -4,4 +4,5 @@
 
 table thead th {
     min-width: 70px;
+    cursor: pointer;
 }
