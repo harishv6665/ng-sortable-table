@@ -1,0 +1,32 @@
+{
+  "name": "ng-sortable-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harishv6665/ng-sortable-table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harishv6665/ng-sortable-table/issues"
+  },
+  "homepage": "https://github.com/harishv6665/ng-sortable-table#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-browserify": "^5.1.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-requirejs": "^1.1.0",
+    "mocha": "^3.3.0",
+    "sinon": "~1.17.*"
+  }
+}

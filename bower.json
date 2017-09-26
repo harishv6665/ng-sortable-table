@@ -1,0 +1,21 @@
+{
+  "name": "ng-sortable-table",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "harish-rzt <harishv6665@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/harishv6665/ng-sortable-table",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-mocks": "~1.5.0"
+  }
+}
