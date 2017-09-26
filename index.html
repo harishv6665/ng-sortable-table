@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sortable Table</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="./app.js"></script>
+
+</head>
+<body ng-app="sortApp" ng-controller="mainController">
+<div class="container">
+    <h1>ANGULAR SORTABLE TABLE</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th ng-repeat="headItem in tableHeadData">
+                    <a href="#" ng-click="sortType = headItem">{{headItem}}</a>
+                    <span ng-show="sortType == headItem" class="fa fa-caret-down"></span>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="dataItem in tableBodyData | orderBy:sortType:sortReverse">
+                <td ng-repeat="headItem in tableHeadData">
+                    {{dataItem[headItem]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
