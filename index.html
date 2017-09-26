@@ -20,18 +20,15 @@
 </head>
 <body ng-app="sortApp" ng-controller="mainController as ctrl">
 <div class="container">
-    <h1>ANGULAR SORTABLE TABLE</h1>
-    <div>
-        <div>sortType: {{sortType}}</div>
-        <div>sortReverse: {{sortReverse}}</div>
-    </div>
+    <h1 class="main-title">ANGULAR SORTABLE TABLE</h1>
     <table class="table table-bordered table-striped">
+
         <thead>
             <tr>
-                <th ng-repeat="headItem in ctrl.tableHeadData">
-                    <a href="#" ng-click="ctrl.sortType = headItem">{{headItem}}</a>
-                    <span ng-show="ctrl.sortType == headItem && !sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="ctrl.sortType == headItem && sortReverse" class="fa fa-caret-up"></span>
+                <th ng-repeat="headItem in ctrl.tableHeadData" ng-click="ctrl.sortType = headItem; ctrl.sortReverse = !ctrl.sortReverse">
+                    {{headItem}}
+                    <span ng-show="ctrl.sortType == headItem && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="ctrl.sortType == headItem && ctrl.sortReverse" class="fa fa-caret-up"></span>
                 </th>
             </tr>
         </thead>
@@ -43,6 +40,7 @@
                 </td>
             </tr>
         </tbody>
+
     </table>
 </div>
 

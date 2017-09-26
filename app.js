@@ -5,24 +5,22 @@ angular.module('sortApp', [])
         // Initial values
         self.tableHeadData = [];
         self.tableBodyData = [];
-        self.sortType = 'title';
+        self.sortType = '';
         self.sortReverse = false;
 
-        // onSuccess for         
-        var ongetTableDataSuccess = function(success) {
+        //
+        var onGetTableDataSuccess = function(success) {
             self.tableHeadData = Object.keys(success.data[0]);
             self.tableBodyData = success.data;
-            self.sortType = self.tableHeadData[2];
-            console.log('default sort', self.sortType);
+            self.sortType = self.tableHeadData[0];
         };
         
-        var ongetTableDataError =  function(error) {
-            console.log("in error", error);
+        var onGetTableDataError =  function(error) {
             alert('Failed to fetch data!' + error);
         };
 
         self.getTableData = function() {
-            $http.get('http://jsonplaceholder.typicode.com/posts').then(ongetTableDataSuccess, ongetTableDataError);
+            $http.get('http://jsonplaceholder.typicode.com/posts').then(onGetTableDataSuccess, onGetTableDataError);
         };
 
         self.getTableData()
