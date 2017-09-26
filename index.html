@@ -18,22 +18,22 @@
     <script src="./app.js"></script>
 
 </head>
-<body ng-app="sortApp" ng-controller="mainController">
+<body ng-app="sortApp" ng-controller="mainController as ctrl">
 <div class="container">
     <h1>ANGULAR SORTABLE TABLE</h1>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th ng-repeat="headItem in tableHeadData">
-                    <a href="#" ng-click="sortType = headItem">{{headItem}}</a>
-                    <span ng-show="sortType == headItem" class="fa fa-caret-down"></span>
+                <th ng-repeat="headItem in ctrl.tableHeadData">
+                    <a href="#" ng-click="ctrl.sortType = headItem">{{headItem}}</a>
+                    <span ng-show="ctrl.sortType == headItem" class="fa fa-caret-down"></span>
                 </th>
             </tr>
         </thead>
 
         <tbody>
-            <tr ng-repeat="dataItem in tableBodyData | orderBy:sortType:sortReverse">
-                <td ng-repeat="headItem in tableHeadData">
+            <tr ng-repeat="dataItem in ctrl.tableBodyData | orderBy:ctrl.sortType:ctrl.sortReverse">
+                <td ng-repeat="headItem in ctrl.tableHeadData">
                     {{dataItem[headItem]}}
                 </td>
             </tr>

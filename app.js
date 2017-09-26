@@ -1,19 +1,19 @@
 angular.module('sortApp', [])
 
-    .controller('mainController', function($scope, $http) {
-
+    .controller('mainController', function($http) {
+        const self = this;
         // Initial values
-        $scope.tableHeadData = [];
-        $scope.tableBodyData = [];
-        $scope.sortType = 'title';
-        $scope.sortReverse = false;
+        self.tableHeadData = [];
+        self.tableBodyData = [];
+        self.sortType = 'title';
+        self.sortReverse = false;
 
         // onSuccess for         
         var ongetTableDataSuccess = function(success) {
-            $scope.tableHeadData = Object.keys(success.data[0]);
-            $scope.tableBodyData = success.data;
-            $scope.sortType = $scope.tableHeadData[2];
-            console.log('default sort', $scope.sortType);
+            self.tableHeadData = Object.keys(success.data[0]);
+            self.tableBodyData = success.data;
+            self.sortType = self.tableHeadData[2];
+            console.log('default sort', self.sortType);
         };
         
         var ongetTableDataError =  function(error) {
@@ -21,10 +21,10 @@ angular.module('sortApp', [])
             alert('Failed to fetch data!' + error);
         };
 
-        $scope.getTableData = function() {
+        self.getTableData = function() {
             $http.get('http://jsonplaceholder.typicode.com/posts').then(ongetTableDataSuccess, ongetTableDataError);
         };
 
-        $scope.getTableData()
+        self.getTableData()
 
     });
